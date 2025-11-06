@@ -9,30 +9,16 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage[italian]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -45,16 +31,12 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -92,11 +74,6 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------------------------------
-
-
 \begin{document}
 
 \begin{center}
@@ -106,21 +83,19 @@
     \href{https://github.com/LedjoLleshaj}{\underline{github.com/ledjolleshaj}}
 \end{center}
 
-
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
   \resumeSubheading
-      {University of Verona}{Verona, Italy}
-      {Master in Computer Science and Engineering}{Oct. 2022 -- Oct 2025}
+      {Università degli studi di Verona}{Verona, Italia}
+      {Laurea Magistrale in Ingegneria e Informatica}{Ott. 2022 -- Ott. 2025}
 
-      \textbf{Thesis:} \emph{Using LLMs to Translate Natural
-Language into SQL Queries}
+      \textbf{Tesi:} \emph{Utilizzo dei LLM per tradurre il linguaggio naturale in query SQL}
     \resumeSubheading
-      {University of Verona}{Verona, Italy}
-      {Bachelor in Computer Science}{Oct. 2019 -- Oct 2022}
+      {Università di Verona}{Verona, Italia}
+      {Laurea Triennale in Informatica}{Ott. 2019 -- Ott. 2022}
 
-      \textbf{Thesis:} \emph{Frontend about a fitbit health check and suggestion system, based on Apriori Algorithm using Ionic Vue framework.}
+      \textbf{Tesi:} \emph{Sviluppo di un frontend per un sistema di controllo e suggerimento della salute tramite Fitbit, basato sull’algoritmo Apriori, utilizzando il framework Ionic Vue.}
   \resumeSubHeadingListEnd
 
 
@@ -129,79 +104,76 @@ Language into SQL Queries}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {IT Support Specialist}{Sept 2024 -- Oct 2025}
-      {Generali Italia: Banca e Assicurazioni}{Verona, Italy}
+      {IT Support Specialist}{Set. 2024 -- Ott. 2025}
+      {Generali Italia: Banca e Assicurazioni}{Verona, Italia}
       \resumeItemListStart
-        \resumeItem{Provided technical assistance to employees by troubleshooting hardware, software, and network issues, ensuring minimal downtime and smooth daily operations.}
+        \resumeItem{Fornito assistenza tecnica ai dipendenti risolvendo problemi hardware, software e di rete, garantendo un funzionamento quotidiano fluido e tempi di inattività minimi.}
       \resumeItemListEnd
       
 
     \resumeSubheading
-      {SOFTWARE DEVELOPER - INTERNSHIP}{Jan. 2024 -- May 2024}
-      {BSQ Security}{Verona, Italy}
+      {Sviluppatore Software - Tirocinio}{Gen. 2024 -- Mag. 2024}
+      {BSQ Security}{Verona, Italia}
       \resumeItemListStart
-        \resumeItem{Debugged and tested the web application qboard.app using pytest.}
-        \resumeItem{Developed a Flask-based backend server for an alarm system featuring AI-powered CCTV detection.}
-        \resumeItem{Built a Telegram bot to deliver automated alarm notifications to subscribed users, integrating with the backend system.}
-        \resumeItem{Conducted comprehensive testing and authored technical documentation to ensure reliability and maintainability.}
+        \resumeItem{Eseguito attività di debug e test dell’applicazione web qboard.app utilizzando pytest.}
+        \resumeItem{Sviluppato un server backend basato su Flask per un sistema di allarme con rilevamento CCTV potenziato da AI.}
+        \resumeItem{Creato un bot Telegram per inviare notifiche di allarme automatiche agli utenti iscritti, integrato con il sistema backend.}
+        \resumeItem{Condotto test approfonditi e redatto documentazione tecnica per garantire affidabilità e manutenibilità.}
     \resumeItemListEnd
 
     \resumeSubheading
-      {VUE DEVELOPER - INTERNSHIP}{Dec 2022 -- April 2023}
-      {RealT}{Verona, Italy}
+      {Sviluppatore Vue - Tirocinio}{Dic. 2022 -- Apr. 2023}
+      {RealT}{Verona, Italia}
       \resumeItemListStart
-        \resumeItem{Developed an application using Vue, TypeScript, Tailwind CSS, and Docker.}
-
+        \resumeItem{Sviluppata un’applicazione utilizzando Vue, TypeScript, Tailwind CSS e Docker.}
       \resumeItemListEnd
+
     \resumeSubheading
-      {CYBERCHALLENGE}{Feb 2022 -- Jun 2022}
-      {\href{https://cyberchallenge.it/}{\underline{Cyberchallenge.it}}}{University of Verona, Italy}
+      {CyberChallenge}{Feb. 2022 -- Giu. 2022}
+      {\href{https://cyberchallenge.it/}{\underline{Cyberchallenge.it}}}{Università di Verona, Italia}
       \resumeItemListStart
-        \resumeItem{After passing the selection test i attended a 4-month training program on Cybersecurity covering topics such as Network Security, Web Application Security, Cryptography, and Ethical Hacking.}
+        \resumeItem{Dopo aver superato il test di selezione, ho partecipato a un corso di formazione di 4 mesi sulla Sicurezza Informatica, trattando argomenti come Sicurezza di Rete, Sicurezza delle Applicazioni Web, Crittografia ed Ethical Hacking.}
       \resumeItemListEnd
       
   \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------
 \section{Personal Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Store inventory managment system} $|$ \emph{Python, Django, Angular, PostgreSQL, Docker}}{March 2025 -- Present}
+          {\textbf{Sistema di gestione inventario negozio} $|$ \emph{Python, Django, Angular, PostgreSQL, Docker}}{Mar. 2025 -- Presente}
           \resumeItemListStart
-            \resumeItem{Developed a full-stack web application using Django in backend with databse in PostgreSQL and Angular for the Frontend to manage the inventory/sales/restock for a fish store}
-            \resumeItem{Deployed and hosted the application using Docker containers which is currently in use by the store owner}
+            \resumeItem{Sviluppata un’applicazione web full-stack utilizzando Django per il backend con database PostgreSQL e Angular per il frontend, per gestire inventario, vendite e rifornimenti di un negozio di pesce.}
+            \resumeItem{Distribuita e ospitata l’applicazione tramite container Docker, attualmente in uso dal titolare del negozio.}
           \resumeItemListEnd
+
       \resumeProjectHeading
-          {\textbf{Hospitium} $|$ \emph{School Project done in Java SpringBoot, Gradle, Git, H2 database}}{}
+          {\textbf{Hospitium} $|$ \emph{Progetto universitario realizzato in Java SpringBoot, Gradle, Git, database H2}}{}
           \resumeItemListStart
-            \resumeItem{Developed a software system to manage the operations of a medical clinic.}
-            \resumeItem{Supported multiple doctors and nurses in handling medications and blood test workflows.}
-            \resumeItem{Implemented features for a shared secretarial office to manage appointments and patient records.}
+            \resumeItem{Sviluppato un sistema software per la gestione delle operazioni di una clinica medica.}
+            \resumeItem{Supporto a più dottori e infermieri nella gestione di medicinali e analisi del sangue.}
+            \resumeItem{Implementate funzionalità per una segreteria condivisa per la gestione di appuntamenti e cartelle cliniche.}
           \resumeItemListEnd
+
       \resumeProjectHeading
-          {\textbf{Vue-job-search} $|$ \emph{School Project done in Typescript using Vue, Rest Api, PostgreSQL database, and django in Git}}{}
+          {\textbf{Vue-job-search} $|$ \emph{Progetto universitario realizzato in TypeScript con Vue, Rest API, database PostgreSQL e Django su Git}}{}
           \resumeItemListStart
-            \resumeItem{Developed a software system to help users search for jobs based on various criteria such as location, job type, and keywords.}
-            \resumeItem{Implemented user authentication and profile management features.}
+            \resumeItem{Sviluppato un sistema software per aiutare gli utenti a cercare lavoro in base a vari criteri come posizione, tipo di lavoro e parole chiave.}
+            \resumeItem{Implementate funzionalità di autenticazione e gestione dei profili utente.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 
-
-%
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming Languages}{: Java, Python, C, SQL (Postgres), JavaScript, Typescript} \\
-     \textbf{Frameworks}{: Spring Boot, Django, Flask, Node.js, JUnit, Angular, FastAPI, TailwindCss} \\
-     \textbf{Developer Tools}{: Git, Docker, VS-Code, IntelliJ, Linux, Postman} \\
-     \textbf{Libraries}{: pandas, NumPy, Matplotlib, Transformers, PyTorch, Scikit-learn} \\
-     \textbf{Languages}{: Albanian (Native), English (Fluent) C1-C2, Italian (Fluent) C1-C2}
+     \textbf{Linguaggi di Programmazione}{: Java, Python, C, SQL (Postgres), JavaScript, Typescript} \\
+     \textbf{Framework}{: Spring Boot, Django, Flask, Node.js, JUnit, Angular, FastAPI, TailwindCss} \\
+     \textbf{Strumenti di Sviluppo}{: Git, Docker, VS-Code, IntelliJ, Linux, Postman} \\
+     \textbf{Librerie}{: pandas, NumPy, Matplotlib, Transformers, PyTorch, Scikit-learn} \\
+     \textbf{Lingue}{: Albanese (Madrelingua), Inglese (Fluente) C1-C2, Italiano (Fluente) C1-C2}
     }}
  \end{itemize}
 
-
-%-------------------------------------------
 \end{document}
