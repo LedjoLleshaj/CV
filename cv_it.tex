@@ -11,6 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[italian]{babel}
 \usepackage{tabularx}
+\usepackage{etoolbox}
 \input{glyphtounicode}
 
 
@@ -76,11 +77,13 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
+\newcommand{\resumeProjectHeading}[3]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small#1 & #3 \\
+    \end{tabular*}%
+    \ifblank{#2}{}{\newline{\small\itshape #2}}%
+    \vspace{-7pt}%
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -182,25 +185,41 @@
 \section{Progetti Personali}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Sistema di Gestione Inventario per Negozio} $|$ \emph{Python, Django, Angular, PostgreSQL, Docker}}{Mar. 2025 -- Presente}
+        {\textbf{Albanian Burocracy RAG}}{Python, ChromaDB, LiteLLM, OpenAI API, Pydantic, Gradio, httpx, Playwright, SQLite, Plotly}{Mar. 2026 -- In corso}
           \resumeItemListStart
-            \resumeItem{Sviluppata un'applicazione web full-stack con backend Django, database PostgreSQL e frontend Angular per gestire inventario, vendite e rifornimenti di un negozio di pescheria al dettaglio.}
-            \resumeItem{Distribuita e ospitata l'applicazione tramite container Docker; attualmente in uso attivo da parte del titolare del negozio.}
+            \resumeItem{Realizzato un pipeline API-first per il crawling del catalogo pubblico e-Albania, con discovery gerarchica di categorie e servizi tramite endpoint JSON, normalizzazione Pydantic, stato idempotente su SQLite e fallback Playwright per pagine a rendering dinamico.}
+            \resumeItem{Costruito un sistema RAG avanzato con chunking intelligente LLM-based (headline + summary + testo verbatim), embedding con \texttt{text-embedding-3-large} su ChromaDB persistente e dual-query retrieval con reranking LLM per massimizzare la precisione del contesto recuperato.}
+            \resumeItem{Progettata una suite di valutazione automatica double-track che misura la qualità del retrieval tramite MRR e nDCG e la qualità delle risposte con LLM-as-a-judge (accuratezza, completezza, rilevanza su scala 1–5), visualizzata su dashboard Gradio con Plotly.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Hospitium} $|$ \emph{Java, Spring Boot, Gradle, H2}}{Lug. 2024}
+        {\textbf{DataGenFlow – AI Data Pipeline Platform}}{Python, FastAPI, React, TypeScript, SQLite, Pytest, Docker}{Feb. 2026}
+          \resumeItemListStart
+            \resumeItem{Sviluppate funzionalità full-stack per la gestione dinamica di modelli LLM ed embedding, introducendo selezione del modello di default, endpoint REST dedicati, persistenza transazionale e interfacce React con aggiornamento realtime dello stato.}
+            \resumeItem{Implementato logica backend resiliente per garantire consistenza dei dati e auto-ripristino del modello di default tramite migrazioni SQL, upsert transazionali e validazioni applicative.}
+            \resumeItem{Realizzati unit tests, integration tests e e2e tests con Pytest per verificare scenari critici di configurazione, reassignment automatico e workflow AI complessi.}
+            \resumeItem{Estesa la piattaforma con pipeline di data augmentation conversazionale, introducendo blocchi AI custom per semantic infilling, duplicate removal e structure sampling, oltre a supporto JSON/template-driven per configurazioni dinamiche.}
+\resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Sistema di Gestione Inventario per Negozio}}{Python, Django, Angular, PostgreSQL, Docker}{Dec. 2025 -- Feb. 2026}
+          \resumeItemListStart
+            \resumeItem{Sviluppato un'applicazione web full-stack con backend Django, database PostgreSQL e frontend Angular per gestire inventario, vendite e rifornimenti di un negozio di pescheria al dettaglio.}
+            \resumeItem{Sviluppato delle funzioni di autogenerazioni di report ogni settimana/mese basato nei dati di vendita, inventario,storico di clienti,rifornimenti...}
+            \resumeItem{Deployed e hosted su Hetzner l'applicazione tramite container Docker; attualmente in uso attivo da parte del titolare del negozio.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Hospitium}}{Java, Spring Boot, Gradle, H2}{Lug. 2024}
           \resumeItemListStart
             \resumeItem{Sviluppato un sistema software per la gestione delle operazioni di una clinica medica, a supporto di medici e infermieri nella gestione di farmaci e flussi di analisi del sangue.}
             \resumeItem{Implementata un'interfaccia segretariale condivisa per la gestione di appuntamenti e cartelle cliniche dei pazienti.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Vue Job Search} $|$ \emph{TypeScript, Vue.js, Django, PostgreSQL, REST API}}{Set. 2022}
+          {\textbf{Vue Job Search}}{TypeScript, Vue.js, Django, PostgreSQL, REST API}{Set. 2022}
           \resumeItemListStart
             \resumeItem{Sviluppata una piattaforma di ricerca lavoro che permette agli utenti di filtrare gli annunci per località, tipo di lavoro e parole chiave.}
             \resumeItem{Implementate funzionalità di autenticazione utente e gestione del profilo.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Altri progetti:} \href{https://github.com/LedjoLleshaj}{\underline{github.com/LedjoLleshaj}}}{}
+          {\textbf{Altri progetti:} \href{https://github.com/LedjoLleshaj}{\underline{github.com/LedjoLleshaj}}}{}{}
     \resumeSubHeadingListEnd
 
 

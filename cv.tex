@@ -11,6 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{etoolbox}
 \input{glyphtounicode}
 
 
@@ -76,11 +77,13 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
+\newcommand{\resumeProjectHeading}[3]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small#1 & #3 \\
+    \end{tabular*}%
+    \ifblank{#2}{}{\newline{\small\itshape #2}}%
+    \vspace{-7pt}%
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -109,7 +112,7 @@
 
 %-----------SUMMARY-----------
 \section{Summary}
-\small{Backend Software Engineer with a Master's in Computer Science, experienced in building RESTful APIs, full-stack web applications, and AI-integrated systems. Proficient in Python (Django, Flask, FastAPI), Java (Spring Boot), TypeScript, and PostgreSQL. Thesis research focused on applying Large Language Models to Natural Language Processing and Text-to-SQL translation. Im looking to start as a Backend Developer and related roles.}
+\small{Backend Software Engineer with a Master's in Computer Science, experienced in building RESTful APIs, full-stack web applications, and AI-integrated systems. Proficient in Python (Django, Flask, FastAPI), Java (Spring Boot), TypeScript, and PostgreSQL. Thesis research focused on applying Large Language Models to Natural Language Processing and Text-to-SQL translation.}
 \vspace{2pt}
 
 
@@ -173,7 +176,7 @@
      \textbf{Frameworks}{: Spring Boot, Django, Flask, FastAPI, Node.js, JUnit, Angular, Vue.js, TailwindCSS} \\
      \textbf{Developer Tools}{: Git, Docker, VS Code, IntelliJ, Linux, Postman} \\
      \textbf{Libraries}{: pandas, NumPy, Matplotlib, Transformers, PyTorch, Scikit-learn} \\
-     \textbf{Languages}{: Albanian (Native), English (Fluent) C1-C2, Italian (Fluent) C1-C2}
+     \textbf{Languages}{: Albanian (Native), English (Fluent) C2, Italian (Fluent) C2}
     }}
  \end{itemize}
 
@@ -182,25 +185,41 @@
 \section{Personal Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Store Inventory Management System} $|$ \emph{Python, Django, Angular, PostgreSQL, Docker}}{March 2025 -- Present}
+          {\textbf{Albanian Burocracy RAG}}{Python, ChromaDB, LiteLLM, OpenAI API, Pydantic, Gradio, httpx, Playwright, SQLite, Plotly}{Mar. 2026 -- Present}
           \resumeItemListStart
-            \resumeItem{Developed a full-stack web application with a Django backend, PostgreSQL database, and Angular frontend to manage inventory, sales, and restocking for a retail fish store.}
-            \resumeItem{Deployed and hosted the application using Docker containers; currently in active use by the store owner.}
+            \resumeItem{Built an API-first pipeline for crawling the public e-Albania catalog, with hierarchical discovery of categories and services via JSON endpoints, Pydantic normalization, idempotent state on SQLite, and Playwright fallback for dynamically rendered pages.}
+            \resumeItem{Built an advanced RAG system with LLM-based intelligent chunking (headline + summary + verbatim text), embeddings with \texttt{text-embedding-3-large} on persistent ChromaDB, and dual-query retrieval with LLM reranking to maximize retrieved context precision.}
+            \resumeItem{Designed a double-track automated evaluation suite measuring retrieval quality via MRR and nDCG, and response quality with LLM-as-a-judge (accuracy, completeness, relevance on a 1--5 scale), visualized on a Gradio dashboard with Plotly.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Hospitium} $|$ \emph{Java, Spring Boot, Gradle, H2}}{Jul. 2024}
+          {\textbf{DataGenFlow -- AI Data Pipeline Platform}}{Python, FastAPI, React, TypeScript, SQLite, Pytest, Docker}{Feb. 2026}
+          \resumeItemListStart
+            \resumeItem{Developed full-stack features for dynamic management of LLM and embedding models, introducing default model selection, dedicated REST endpoints, transactional persistence, and React interfaces with real-time state updates.}
+            \resumeItem{Implemented resilient backend logic to ensure data consistency and automatic default model recovery via SQL migrations, transactional upserts, and application-level validations.}
+            \resumeItem{Built unit, integration, and e2e tests with Pytest to verify critical configuration scenarios, automatic reassignment, and complex AI workflows.}
+            \resumeItem{Extended the platform with a conversational data augmentation pipeline, introducing custom AI blocks for semantic infilling, duplicate removal, and structure sampling, plus JSON/template-driven support for dynamic configurations.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Store Inventory Management System}}{Python, Django, Angular, PostgreSQL, Docker}{Dec. 2025 -- Feb. 2026}
+          \resumeItemListStart
+            \resumeItem{Developed a full-stack web application with a Django backend, PostgreSQL database, and Angular frontend to manage inventory, sales, and restocking for a retail fish store.}
+            \resumeItem{Developed auto-generation of weekly and monthly reports based on sales data, inventory, customer history, and restocking records.}
+            \resumeItem{Deployed and hosted the application on Hetzner using Docker containers; currently in active use by the store owner.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Hospitium}}{Java, Spring Boot, Gradle, H2}{Jul. 2024}
           \resumeItemListStart
             \resumeItem{Developed a software system to manage the operations of a medical clinic, supporting doctors and nurses in handling medications and blood test workflows.}
             \resumeItem{Implemented a shared secretarial interface for managing appointments and patient records.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Vue Job Search} $|$ \emph{TypeScript, Vue.js, Django, PostgreSQL, REST API}}{Sept. 2022}
+          {\textbf{Vue Job Search}}{TypeScript, Vue.js, Django, PostgreSQL, REST API}{Sept. 2022}
           \resumeItemListStart
             \resumeItem{Developed a job search platform allowing users to filter listings by location, job type, and keywords.}
             \resumeItem{Implemented user authentication and profile management features.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{More projects:} \href{https://github.com/LedjoLleshaj}{\underline{github.com/LedjoLleshaj}}}{}
+          {\textbf{More projects:} \href{https://github.com/LedjoLleshaj}{\underline{github.com/LedjoLleshaj}}}{}{}
     \resumeSubHeadingListEnd
 
 
